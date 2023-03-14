@@ -1,0 +1,480 @@
+{
+  "data": {
+    "reportData": {
+      "report": {
+        "playerDetails": {
+          "data": {
+            "playerDetails": {
+              "tanks": [
+                {
+                  "name": "Potators",
+                  "id": 2,
+                  "guid": 180924710,
+                  "type": "Warrior",
+                  "server": "Hyjal",
+                  "icon": "Warrior-Protection",
+                  "specs": [
+                    {
+                      "spec": "Protection",
+                      "count": 6
+                    }
+                  ],
+                  "minItemLevel": 407,
+                  "maxItemLevel": 407,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Zengshui",
+                  "id": 5,
+                  "guid": 145436280,
+                  "type": "Monk",
+                  "server": "Hyjal",
+                  "icon": "Monk-Brewmaster",
+                  "specs": [
+                    {
+                      "spec": "Brewmaster",
+                      "count": 6
+                    }
+                  ],
+                  "minItemLevel": 403,
+                  "maxItemLevel": 403,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Eyewing",
+                  "id": 92,
+                  "guid": 98877997,
+                  "type": "Paladin",
+                  "server": "Draenor",
+                  "icon": "Paladin-Protection",
+                  "specs": [
+                    {
+                      "spec": "Protection",
+                      "count": 20
+                    }
+                  ],
+                  "minItemLevel": 377,
+                  "maxItemLevel": 381,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Lullabys",
+                  "id": 78,
+                  "guid": 143217534,
+                  "type": "Paladin",
+                  "server": "Hyjal",
+                  "icon": "Paladin-Protection",
+                  "specs": [
+                    {
+                      "spec": "Protection",
+                      "count": 23
+                    }
+                  ],
+                  "minItemLevel": 395,
+                  "maxItemLevel": 396,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Elbøbi",
+                  "id": 395,
+                  "guid": 207434283,
+                  "type": "Monk",
+                  "server": "Hyjal",
+                  "icon": "Monk-Brewmaster",
+                  "specs": [
+                    {
+                      "spec": "Brewmaster",
+                      "count": 1
+                    }
+                  ],
+                  "minItemLevel": 406,
+                  "maxItemLevel": 406,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                }
+              ],
+              "healers": [
+                {
+                  "name": "Générãld",
+                  "id": 12,
+                  "guid": 153035431,
+                  "type": "Shaman",
+                  "server": "Hyjal",
+                  "icon": "Shaman-Restoration",
+                  "specs": [
+                    {
+                      "spec": "Restoration",
+                      "count": 14
+                    }
+                  ],
+                  "minItemLevel": 392,
+                  "maxItemLevel": 392,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Helyandra",
+                  "id": 6,
+                  "guid": 199166276,
+                  "type": "Priest",
+                  "server": "Hyjal",
+                  "icon": "Priest-Discipline",
+                  "specs": [
+                    {
+                      "spec": "Discipline",
+                      "count": 28
+                    }
+                  ],
+                  "minItemLevel": 407,
+                  "maxItemLevel": 407,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Maximiliann",
+                  "id": 8,
+                  "guid": 207531612,
+                  "type": "Priest",
+                  "server": "Hyjal",
+                  "icon": "Priest-Holy",
+                  "specs": [
+                    {
+                      "spec": "Holy",
+                      "count": 34
+                    }
+                  ],
+                  "minItemLevel": 404,
+                  "maxItemLevel": 404,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Yadjîan",
+                  "id": 796,
+                  "guid": 206209798,
+                  "type": "Shaman",
+                  "server": "Hyjal",
+                  "icon": "Shaman-Restoration",
+                  "specs": [
+                    {
+                      "spec": "Restoration",
+                      "count": 1
+                    }
+                  ],
+                  "minItemLevel": 408,
+                  "maxItemLevel": 408,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Ydrillh",
+                  "id": 79,
+                  "guid": 154942154,
+                  "type": "Paladin",
+                  "server": "Hyjal",
+                  "icon": "Paladin-Holy",
+                  "specs": [
+                    {
+                      "spec": "Holy",
+                      "count": 10
+                    }
+                  ],
+                  "minItemLevel": 404,
+                  "maxItemLevel": 404,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Æzô",
+                  "id": 417,
+                  "guid": 115112895,
+                  "type": "Druid",
+                  "server": "Hyjal",
+                  "icon": "Druid-Restoration",
+                  "specs": [
+                    {
+                      "spec": "Restoration",
+                      "count": 1
+                    }
+                  ],
+                  "minItemLevel": 390,
+                  "maxItemLevel": 390,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                }
+              ],
+              "dps": [
+                {
+                  "name": "Freiyou",
+                  "id": 1,
+                  "guid": 208111344,
+                  "type": "Evoker",
+                  "server": "Hyjal",
+                  "icon": "Evoker-Devastation",
+                  "specs": [
+                    {
+                      "spec": "Devastation",
+                      "count": 26
+                    }
+                  ],
+                  "minItemLevel": 398,
+                  "maxItemLevel": 398,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Faceofferal",
+                  "id": 589,
+                  "guid": 118149353,
+                  "type": "Unknown",
+                  "server": "Stormscale",
+                  "icon": "Unknown-Feral",
+                  "specs": [
+                    {
+                      "spec": "Feral",
+                      "count": 1
+                    }
+                  ],
+                  "minItemLevel": 416,
+                  "maxItemLevel": 416,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Générãld",
+                  "id": 12,
+                  "guid": 153035431,
+                  "type": "Shaman",
+                  "server": "Hyjal",
+                  "icon": "Shaman-Elemental",
+                  "specs": [
+                    {
+                      "spec": "Elemental",
+                      "count": 6
+                    }
+                  ],
+                  "minItemLevel": 392,
+                  "maxItemLevel": 392,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Kærys",
+                  "id": 81,
+                  "guid": 180477327,
+                  "type": "Mage",
+                  "server": "KhazModan",
+                  "icon": "Mage",
+                  "specs": [
+                    {
+                      "spec": "Arcane",
+                      "count": 1
+                    },
+                    {
+                      "spec": "Frost",
+                      "count": 22
+                    }
+                  ],
+                  "minItemLevel": 382,
+                  "maxItemLevel": 383,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Atnos",
+                  "id": 9,
+                  "guid": 186943471,
+                  "type": "Hunter",
+                  "server": "Hyjal",
+                  "icon": "Hunter-BeastMastery",
+                  "specs": [
+                    {
+                      "spec": "BeastMastery",
+                      "count": 29
+                    }
+                  ],
+                  "minItemLevel": 404,
+                  "maxItemLevel": 404,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Ðroodball",
+                  "id": 10,
+                  "guid": 204262954,
+                  "type": "Druid",
+                  "server": "Hyjal",
+                  "icon": "Druid-Balance",
+                  "specs": [
+                    {
+                      "spec": "Balance",
+                      "count": 29
+                    }
+                  ],
+                  "minItemLevel": 392,
+                  "maxItemLevel": 392,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Frozendraco",
+                  "id": 82,
+                  "guid": 174013743,
+                  "type": "Evoker",
+                  "server": "DefiasBrotherhood",
+                  "icon": "Evoker-Devastation",
+                  "specs": [
+                    {
+                      "spec": "Devastation",
+                      "count": 18
+                    }
+                  ],
+                  "minItemLevel": 381,
+                  "maxItemLevel": 386,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Quaetys",
+                  "id": 3,
+                  "guid": 143217646,
+                  "type": "Warlock",
+                  "server": "Hyjal",
+                  "icon": "Warlock-Demonology",
+                  "specs": [
+                    {
+                      "spec": "Demonology",
+                      "count": 29
+                    }
+                  ],
+                  "minItemLevel": 401,
+                  "maxItemLevel": 401,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Yakawa",
+                  "id": 74,
+                  "guid": 209872830,
+                  "type": "Hunter",
+                  "server": "Archimonde",
+                  "icon": "Hunter-BeastMastery",
+                  "specs": [
+                    {
+                      "spec": "BeastMastery",
+                      "count": 23
+                    }
+                  ],
+                  "minItemLevel": 377,
+                  "maxItemLevel": 379,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Arcke",
+                  "id": 201,
+                  "guid": 206957761,
+                  "type": "Mage",
+                  "server": "Hyjal",
+                  "icon": "Mage-Frost",
+                  "specs": [
+                    {
+                      "spec": "Frost",
+                      "count": 1
+                    }
+                  ],
+                  "minItemLevel": 396,
+                  "maxItemLevel": 396,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Tempi",
+                  "id": 7,
+                  "guid": 128372625,
+                  "type": "Druid",
+                  "server": "Blackrock",
+                  "icon": "Druid-Balance",
+                  "specs": [
+                    {
+                      "spec": "Balance",
+                      "count": 5
+                    }
+                  ],
+                  "minItemLevel": 393,
+                  "maxItemLevel": 393,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Turtlet",
+                  "id": 84,
+                  "guid": 114568028,
+                  "type": "DeathKnight",
+                  "server": "DefiasBrotherhood",
+                  "icon": "DeathKnight-Unholy",
+                  "specs": [
+                    {
+                      "spec": "Unholy",
+                      "count": 23
+                    }
+                  ],
+                  "minItemLevel": 385,
+                  "maxItemLevel": 386,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                },
+                {
+                  "name": "Пойзониум",
+                  "id": 80,
+                  "guid": 256706309,
+                  "type": "Mage",
+                  "server": "Гордунни",
+                  "icon": "Mage-Fire",
+                  "specs": [
+                    {
+                      "spec": "Fire",
+                      "count": 22
+                    }
+                  ],
+                  "minItemLevel": 404,
+                  "maxItemLevel": 404,
+                  "potionUse": 0,
+                  "healthstoneUse": 0,
+                  "combatantInfo": []
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
