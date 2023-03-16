@@ -14,17 +14,35 @@ headers = {
     'Content-Type': 'application/json',
 }
 
-data = {'query': '{ reportData '
-                 '              {'
-                 '              report(code: "n6rqwa7ZHjWvY84K") { '
-                 '                          title,'
-                 '                          table(startTime:0, endTime:99999999999),'
-                 '                          owner {name},'
-                 '                          playerDetails(startTime:0, endTime:99999999999)'
-                 '                                                               }'
-                 '              }, '
-                 '}'
-        }
+
+code = input(("Enter report code: ")) # Example of code : n6rqwa7ZHjWvY84K
+
+data = {'query': f'''{{ reportData {{
+		report(code: "{code}") {{
+			title
+			table(startTime: 0, endTime: 99999999999)
+			owner {{
+				name
+			}}
+			healthStone: events(
+				dataType: Healing
+				startTime: 0
+				endTime: 999999999
+				abilityID: 6262
+			) {{
+				data
+			}},
+			death: events(
+				dataType: Deaths
+				startTime: 0
+				endTime: 999999999
+			) {{
+				data
+			}},
+			playerDetails(startTime:0, endTime: 99999999)
+		}}
+	    }}}}
+        '''}
 
 # Make the API request
 response = requests.post(api_url, headers=headers, json=data)
@@ -33,34 +51,59 @@ response = requests.post(api_url, headers=headers, json=data)
 if response.status_code == 200:
     # Parse the JSON response
     data = response.json()
-    print("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄")
+    print("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄")
     print("\033[1m Title : \033[0m" + data['data']['reportData']['report'].get('title'),
           ";\033[1m Uploaded By : \033[0m" + "\033[36m" + data['data']['reportData']['report']['owner'].get(
               'name') + "\033[0m")
-    print("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀")
-
-    countofDeaths = defaultdict(int)
-    print("DEATHS RECAP :")
-    # Print out the fight details
-    for items in data['data']['reportData']['report']['table']['data']['deathEvents']:
-        countofDeaths[items.get('name')] += 1
-
-
-
-
+    print("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀")
 else:
     print(f'Error fetching fight data: {response.status_code} - {response.text}')
 
+
+playersMap = {}
+
+for role in ['tanks', 'healers', 'dps']:
+    for player in data['data']['reportData']['report']['playerDetails']['data']['playerDetails'][role]:
+        playersMap[player['id']] = player
+print(playersMap)
+
+
+
+# countofDeaths = defaultdict(int)
+# print("DEATHS RECAP :")
+# # Print out the fight details
+# for items in data['data']['reportData']['report']['table']['data']['deathEvents']:
+#     countofDeaths[items.get('name')] += 1
+
+
+print("-----------------------------------------------------------------")
+print("---------------------- COUNT OF DEATHS --------------------------")
+print("-----------------------------------------------------------------")
 # Find the max amount of deaths
-max_deaths = max(countofDeaths.values())
+# max_deaths = max(countofDeaths.values())
+#
+# print(countofDeaths)
+#
+# # Print all players with max amount of deaths
+# print("Players with max amount of deaths:")
+# for player, deaths in countofDeaths.items():
+#     if deaths == max_deaths:
+#         print(player, max_deaths, "deaths")
 
-print(countofDeaths)
+deathByPlayer = {}
 
-# Print all players with max amount of deaths
-print("Players with max amount of deaths:")
-for player, deaths in countofDeaths.items():
-    if deaths == max_deaths:
-        print(player, max_deaths, "deaths")
+for event in data['data']['reportData']['report']['death']['data']:
+    playerID = event['targetID']
+    deathByPlayer.setdefault(playerID, 0)
+    deathByPlayer[playerID] += 1
+
+for playerID, death in deathByPlayer.items():
+    print(playersMap[playerID]['name'], death, "deaths")
+
+
+print("-----------------------------------------------------------------")
+print("---------------------- HEALTHSTONE USE --------------------------")
+print("-----------------------------------------------------------------")
 
 healthStonesUsed = defaultdict(int)
 
@@ -76,7 +119,30 @@ for players in playerDetails['dps']:
 for players in playerDetails['tanks']:
     healthStonesUsed[players.get('name')] += players.get('healthstoneUse')
 
-healthStonesUsed = sorted(healthStonesUsed.items(), key=lambda x:x[1])
+healthStonesUsed = sorted(healthStonesUsed.items(), key=lambda x: x[1])
 
 for items in healthStonesUsed:
+    print(items)
+
+print("-----------------------------------------------------------------")
+print("---------------------- POTION USE --------------------------")
+print("-----------------------------------------------------------------")
+
+potionUsed = defaultdict(int)
+
+playerDetails = data['data']['reportData']['report']['table']['data']['playerDetails']
+print("Use of potions during the raid :")
+
+for player in playerDetails['healers']:
+    potionUsed[player.get('name')] = player.get('potionUse')
+
+for player in playerDetails['dps']:
+    potionUsed[player.get('name')] = player.get('potionUse')
+
+for player in playerDetails['tanks']:
+    potionUsed[player.get('name')] = player.get('potionUse')
+
+potionUsed = sorted(potionUsed.items(), key=lambda x: x[1])
+
+for items in potionUsed:
     print(items)
