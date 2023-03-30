@@ -15,10 +15,10 @@ headers = {
 }
 
 
-code = input(("Enter report code: ")) # Example of code : n6rqwa7ZHjWvY84K
+# code = input(("Enter report code: ")) # Example of code : n6rqwa7ZHjWvY84K
 
 data = {'query': f'''{{ reportData {{
-		report(code: "{code}") {{
+		report(code: "X93abGcf2Tr4VQF6") {{
 			title
 			table(startTime: 0, endTime: 99999999999)
 			owner {{
@@ -101,48 +101,40 @@ for playerID, death in deathByPlayer.items():
     print(playersMap[playerID]['name'], death, "deaths")
 
 
+
+
 print("-----------------------------------------------------------------")
 print("---------------------- HEALTHSTONE USE --------------------------")
 print("-----------------------------------------------------------------")
 
-healthStonesUsed = defaultdict(int)
-
-playerDetails = data['data']['reportData']['report']['table']['data']['playerDetails']
+healthStonesUsed = {}
 print("Use of healthstone during the raid :")
 
-for players in playerDetails['healers']:
-    healthStonesUsed[players.get('name')] += players.get('healthstoneUse')
+for event in data['data']['reportData']['report']['healthStone']['data']:
+    playerID = event['sourceID']
+    healthStonesUsed.setdefault(playerID, 0)
+    healthStonesUsed[playerID] += 1
 
-for players in playerDetails['dps']:
-    healthStonesUsed[players.get('name')] += players.get('healthstoneUse')
+print(healthStonesUsed)
 
-for players in playerDetails['tanks']:
-    healthStonesUsed[players.get('name')] += players.get('healthstoneUse')
+for playerID, healthStone in healthStonesUsed.items():
+    print(playersMap[playerID]['name'], "used ", healthStone, "healthStone")
 
-healthStonesUsed = sorted(healthStonesUsed.items(), key=lambda x: x[1])
-
-for items in healthStonesUsed:
-    print(items)
 
 print("-----------------------------------------------------------------")
 print("---------------------- POTION USE --------------------------")
 print("-----------------------------------------------------------------")
 
-potionUsed = defaultdict(int)
+# potionUsed = {}
 
-playerDetails = data['data']['reportData']['report']['table']['data']['playerDetails']
 print("Use of potions during the raid :")
 
-for player in playerDetails['healers']:
-    potionUsed[player.get('name')] = player.get('potionUse')
+for event in data['data']['reportData']['report']['potion']['data']:
+    playerID = event['sourceID']
+    healthStonesUsed.setdefault(playerID, 0)
+    healthStonesUsed[playerID] += 1
 
-for player in playerDetails['dps']:
-    potionUsed[player.get('name')] = player.get('potionUse')
+print(healthStonesUsed)
 
-for player in playerDetails['tanks']:
-    potionUsed[player.get('name')] = player.get('potionUse')
-
-potionUsed = sorted(potionUsed.items(), key=lambda x: x[1])
-
-for items in potionUsed:
-    print(items)
+for playerID, healthStone in healthStonesUsed.items():
+    print(playersMap[playerID]['name'], "used ", healthStone, "healthStone")
