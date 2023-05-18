@@ -18,7 +18,7 @@ headers = {
 # code = input(("Enter report code: ")) # Example of code : n6rqwa7ZHjWvY84K
 
 data = {'query': f'''{{ reportData {{
-		report(code: "FR4pHbB8XktYqGzZ") {{
+		report(code: { report_id }) {{
 			title
 			table(startTime: 0, endTime: 99999999999)
 			owner {{
@@ -127,9 +127,9 @@ print("-----------------------------------------------------------------")
 
 # potionUsed = {}
 
-print("Use of potions during the raid :")
+print("Use of healthstone during the raid :")
 
-for event in data['data']['reportData']['report']['potion']['data']:
+for event in data['data']['reportData']['report']['healthStone']['data']:
     playerID = event['sourceID']
     healthStonesUsed.setdefault(playerID, 0)
     healthStonesUsed[playerID] += 1
